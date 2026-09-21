@@ -36,6 +36,8 @@ services:
       MYSQL_DB: ${MYSQL_DB:-headliner_db}
       APP_DOMAIN: ${APP_DOMAIN:-http://localhost:4040}
     volumes:
+      - ./apps/backend:/app
+      - /app/node_modules
       - uploads:/app/public
     depends_on:
       mysql:
